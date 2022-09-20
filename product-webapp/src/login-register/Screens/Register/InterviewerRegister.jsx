@@ -76,7 +76,7 @@ export default function InterviewerRegister(props) {
     onSubmit: (values,{resetForm}) => {
       formik.setFieldValue("showSnackBar",false);
       axios
-        .post("https://pickmyslot.stackroute.io/userservice/api/v1/interviewerProfile", {
+        .post("http://13.57.221.11:8080/userservice/api/v1/interviewerProfile", {
           interviewerEmailId: values.email,
           userPassword: values.password,
           interviewerName: values.name,
@@ -89,7 +89,7 @@ export default function InterviewerRegister(props) {
         })
         .then((resp) => {
           if(resp.status==201){
-            axios.post("https://pickmyslot.stackroute.io/authenticationservice/api/v1", {
+            axios.post("http://13.57.221.11:8080/authenticationservice/api/v1", {
               userEmailId: resp.data.interviewerEmailId,
               userPassword: resp.data.userPassword,
               userRole: "INTERVIEWER"

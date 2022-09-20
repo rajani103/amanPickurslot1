@@ -34,7 +34,7 @@ function InterviewDashboard() {
   }
 
   function update() {
-   axios.get(`https://pickmyslot.stackroute.io/tagservice/api/v1/${emailId}`)
+   axios.get(`http://13.57.221.11:8080/tagservice/api/v1/${emailId}`)
     // axios.get(`http://localhost:3001/BookedSlots`)
     .then((response) => {
       //console.log(response);

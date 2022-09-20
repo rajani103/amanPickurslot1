@@ -34,7 +34,7 @@ function Addslot(props)
             slotStatus: "Available"
         }
         console.log(startTime.value);
-        axios.post(`https://pickmyslot.stackroute.io/interviewerservice/api/v1/newSlot`, newSlot)
+        axios.post(`http://13.57.221.11:8080/interviewerservice/api/v1/newSlot`, newSlot)
         .then(response => console.log(response));
 
         // window.location.reload();

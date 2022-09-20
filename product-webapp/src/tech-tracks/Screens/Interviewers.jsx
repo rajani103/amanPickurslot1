@@ -12,7 +12,7 @@ const Interviewers = (props) => {
   const fetchData = () => {
     //http://localhost:3005/interviewerProfile?techTrack=${location.state.data}
     axios
-      .get(`https://pickmyslot.stackroute.io/userservice/api/v1/techTrack/${location.state.data}`)
+      .get(`http://13.57.221.11:8080/userservice/api/v1/techTrack/${location.state.data}`)
       .then((res) => {
         return res.data;
       })

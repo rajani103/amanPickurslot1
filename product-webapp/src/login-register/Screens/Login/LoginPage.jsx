@@ -55,7 +55,7 @@ export default function LoginPage(props) {
     onSubmit: (values, { setShow }) => {
       formik.setFieldValue("showSnackBar", false);
       axios
-        .post("https://pickmyslot.stackroute.io/authenticationservice/api/v1/login", {
+        .post("http://13.57.221.11:8080/authenticationservice/api/v1/login", {
           userEmailId: values.email,
           userPassword: values.password,
         })
@@ -66,7 +66,7 @@ export default function LoginPage(props) {
             window.localStorage.setItem("EmailID", decodedToken.EmailID);
             if (decodedToken.UserRole.localeCompare("TAG_TEAM_MEMBER") == 0) {
               
-              axios.get(`https://pickmyslot.stackroute.io/userservice/api/v1/tagTeam/${decodedToken.EmailID}`)
+              axios.get(`http://13.57.221.11:8080/userservice/api/v1/tagTeam/${decodedToken.EmailID}`)
               .then((response)=>{
                 window.localStorage.setItem("tagTeamName", response.data.tagTeamName);
                 window.localStorage.setItem("tagMemberName", response.data.tagMemberName);
@@ -75,7 +75,7 @@ export default function LoginPage(props) {
               navigate("/techTracks");
             }
             else {
-              axios.get(`https://pickmyslot.stackroute.io/userservice/api/v1/interviewer/${decodedToken.EmailID}`)
+              axios.get(`http://13.57.221.11:8080/userservice/api/v1/interviewer/${decodedToken.EmailID}`)
               .then((response)=>{
                 console.log("Data ",response.data.interviewerName)
                 window.localStorage.setItem("InterviewerName", response.data.interviewerName);
