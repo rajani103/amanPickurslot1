@@ -1,4 +1,4 @@
-version: "2"
+version: "3.3"
 services:
   mysqlservice:
     image: mysql
@@ -101,7 +101,6 @@ services:
   userservice:
     container_name: user-service-container
     build: user-service/
-    hostname: localhost
     network_mode: host
     ports:
       - 8090:8090
