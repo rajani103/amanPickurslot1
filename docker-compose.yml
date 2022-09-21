@@ -6,7 +6,7 @@ services:
       - 3306:3306
     container_name: mysql-container
     network_mode: host
-    hostname: localhost
+    #hostname: localhost
     environment:
       MYSQL_ROOT_PASSWORD: Global@145#
       MYSQL_USERNAME: root
@@ -17,14 +17,14 @@ services:
     image: mongo:latest
     container_name: mongo-container
     network_mode: host
-    hostname: localhost
+    #hostname: localhost
     ports:
       - 27017:27017
 
   configserver:
     container_name: config-server-container
     build: config-server/
-    hostname: localhost
+    #hostname: localhost
     network_mode: host
     ports:
       - 8888:8888
@@ -32,7 +32,7 @@ services:
   eurekaserver:
     container_name: eureka-server-container
     build: eureka-server/
-    hostname: localhost
+    #hostname: localhost
     network_mode: host
     ports:
       - 8761:8761
@@ -40,7 +40,7 @@ services:
   api-gateway:
     container_name: api-gateway-container
     build: api-gateway/
-    hostname: localhost
+    #hostname: localhost
     network_mode: host
     ports:
       - 8080:8080
@@ -48,7 +48,7 @@ services:
   authenticationservice:
     container_name: authentication-service-container
     build: authentication-service/
-    hostname: localhost
+    #hostname: localhost
     network_mode: host
     ports:
       - 8095:8095
@@ -61,7 +61,7 @@ services:
   emailservice:
     container_name: email-service-container
     build: email-service/
-    hostname: localhost
+    #hostname: localhost
     network_mode: host
     ports:
       - 8075:8075
@@ -75,7 +75,7 @@ services:
   interviewerservice:
     container_name: interviewer-service-container
     build: interviewer-service/
-    hostname: localhost
+    #hostname: localhost
     network_mode: host
     ports:
       - 8097:8097
@@ -88,7 +88,7 @@ services:
   tagservice:
     container_name: tag-service-container
     build: tag-service/
-    hostname: localhost
+    #hostname: localhost
     network_mode: host
     ports:
       - 8070:8070
@@ -116,7 +116,7 @@ services:
     restart: always
     container_name: pickyourslot-webapp
     network_mode: host
-    hostname: localhost
+    #hostname: localhost
     ports:
       - 4200:4200
     depends_on:
