@@ -12,7 +12,7 @@ const Interviewers = (props) => {
   const fetchData = () => {
     //http://localhost:3005/interviewerProfile?techTrack=${location.state.data}
     axios
-      .get(`http://18.188.13.90:8080/userservice/api/v1/techTrack/${location.state.data}`)
+      .get(`http://52.15.66.36:8080/userservice/api/v1/techTrack/${location.state.data}`)
       .then((res) => {
         return res.data;
       })

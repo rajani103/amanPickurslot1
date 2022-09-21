@@ -26,7 +26,7 @@ const InterviewerCard = (props) => {
   const tagMemberName = window.localStorage.getItem("tagMemberName");
   const postData = (data, description) => {
     axios
-      .post("http://18.188.13.90:8080/tagservice/api/v1/bookedSlot", {
+      .post("http://52.15.66.36:8080/tagservice/api/v1/bookedSlot", {
         // id: data.id,
         bookedSlotId: data.slotId,
         tagMemberEmailId: emailId,
@@ -49,7 +49,7 @@ const InterviewerCard = (props) => {
       })
       .then((response) => {
         if(response.status===201){
-          axios.put(`http://18.188.13.90:8080/interviewerservice/api/v1/updateSlot`,{
+          axios.put(`http://52.15.66.36:8080/interviewerservice/api/v1/updateSlot`,{
             slotId: data.slotId,
             emailId: data.emailId,
             interviewerName: data.interviewerName,
@@ -107,7 +107,7 @@ const InterviewerCard = (props) => {
       //`http://localhost:3001/InterviewSlots?interviewerName=Amit`
       axios
         .get(
-          `http://18.188.13.90:8080/interviewerservice/api/v1/availableSlot/${modalShow.email}`
+          `http://52.15.66.36:8080/interviewerservice/api/v1/availableSlot/${modalShow.email}`
         )
         .then((res) => {
           return res.data;
