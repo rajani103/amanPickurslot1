@@ -37,7 +37,7 @@ function UpdateSlot()
         }});
     const fetchData = async () =>{
     //   const response = await fetch('http://localhost:3000/InterviewSlots');
-    const response = await fetch(`http://13.57.221.11:8080/interviewerservice/api/v1/${emailId}`);
+    const response = await fetch(`http://18.188.13.90:8080/interviewerservice/api/v1/${emailId}`);
       const body = await response.json();
       const InterviewTransform = body.map(interviewdetail => {
           return {
@@ -97,7 +97,7 @@ function UpdateSlot()
                     "endTime": covertTo12hrs(endTime.value),
                     "slotStatus": "Available"
                 }
-                axios.post('http://13.57.221.11:8080/interviewerservice/api/v1/newSlot', newSlot)
+                axios.post('http://18.188.13.90:8080/interviewerservice/api/v1/newSlot', newSlot)
                 // axios.post('http://localhost:3000/InterviewSlots', newSlot)
                 .then(response => {
                     formik.setFieldValue("showSnackBar",true);
@@ -248,7 +248,7 @@ function Bookedbutton(props)
 function deleteSlot(props)
 {
     console.log(props);
-    axios.delete(`http://13.57.221.11:8080/interviewerservice/api/v1/${props}`).then((res)=> {
+    axios.delete(`http://18.188.13.90:8080/interviewerservice/api/v1/${props}`).then((res)=> {
             console.log(res);
     })
     setTimeout(fetchData,200);

@@ -51,7 +51,7 @@ export default function TagTeamReport(props) {
         //     });
 
         axios
-            .get(`http://13.57.221.11:8080/interviewerservice/api/v1/interviewer/${year}/${month}`)
+            .get(`http://18.188.13.90:8080/interviewerservice/api/v1/interviewer/${year}/${month}`)
             .then((resp) => {
                 setSlotsProvided(resp.data.alllist);
                 setSlotsBooked(resp.data.bookedslot);
@@ -64,7 +64,7 @@ export default function TagTeamReport(props) {
             });
 
             axios
-            .get(`http://13.57.221.11:8080/tagservice/api/v1/tag/${year}/${month}/${tagTeamName}`)
+            .get(`http://18.188.13.90:8080/tagservice/api/v1/tag/${year}/${month}/${tagTeamName}`)
             .then((resp) => {
                 setSlotsBookedByTeam(resp.data);
 
@@ -84,7 +84,7 @@ export default function TagTeamReport(props) {
 
         axios
             .get(
-                `http://13.57.221.11:8080/interviewerservice/api/v1/interviewer/${year}/${month}`
+                `http://18.188.13.90:8080/interviewerservice/api/v1/interviewer/${year}/${month}`
             )
             .then((resp) => {
                 if (resp.alllist > 0) {
